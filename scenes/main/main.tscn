@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cymnql4of0twx" path="res://assets/sprites/background.png" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://ber3er2visd3a" path="res://scenes/asteroids/big_asteroid.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://mlqmrplm7cwf" path="res://scenes/laser/laser.tscn" id="3_k2fmo"]
 
 [node name="Main" type="Node2D" unique_id=690089872]
 
@@ -12,3 +13,6 @@ texture = ExtResource("1_hyk8p")
 [node name="BigAsteroid" parent="." unique_id=1669415260 instance=ExtResource("2_iuonh")]
 position = Vector2(1268, 338)
 speed = 250.0
+
+[node name="Laser" parent="." unique_id=282477043 instance=ExtResource("3_k2fmo")]
+position = Vector2(189, 322)
