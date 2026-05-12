@@ -7,7 +7,6 @@
 radius = 80.1561
 
 [node name="BigAsteroid" type="Area2D" unique_id=1669415260]
-position = Vector2(1077, 225)
 script = ExtResource("1_y2s20")
 metadata/_edit_group_ = true
 

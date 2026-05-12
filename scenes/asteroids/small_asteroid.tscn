@@ -7,7 +7,6 @@
 radius = 37.0
 
 [node name="SmallAsteroid" type="Area2D" unique_id=382863225]
-position = Vector2(0, 3)
 script = ExtResource("2_kfbcv")
 metadata/_edit_group_ = true
 
