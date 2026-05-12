@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://mlqmrplm7cwf"]
 
 [ext_resource type="Texture2D" uid="uid://fxwpstrsgyr7" path="res://assets/sprites/laser.png" id="1_0kheo"]
+[ext_resource type="Script" uid="uid://kj2ago7mc7or" path="res://scenes/laser/laser.gd" id="1_j8ec3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8ec3"]
 radius = 8.0
 height = 74.0
 
 [node name="Laser" type="Area2D" unique_id=282477043]
+script = ExtResource("1_j8ec3")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=457396306]
