@@ -2,17 +2,56 @@
 
 [ext_resource type="Texture2D" uid="uid://cymnql4of0twx" path="res://assets/sprites/background.png" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://ber3er2visd3a" path="res://scenes/asteroids/big_asteroid.tscn" id="2_iuonh"]
-[ext_resource type="PackedScene" uid="uid://mlqmrplm7cwf" path="res://scenes/laser/laser.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://u57j8cw0hyvx" path="res://scenes/player/player.tscn" id="3_k2fmo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2fmo"]
+size = Vector2(1169, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3cfh"]
+size = Vector2(18, 690)
 
 [node name="Main" type="Node2D" unique_id=690089872]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1214120020]
-position = Vector2(559, 338)
+position = Vector2(612, 343)
 texture = ExtResource("1_hyk8p")
 
 [node name="BigAsteroid" parent="." unique_id=1669415260 instance=ExtResource("2_iuonh")]
 position = Vector2(1268, 338)
 speed = 250.0
 
-[node name="Laser" parent="." unique_id=282477043 instance=ExtResource("3_k2fmo")]
-position = Vector2(189, 322)
+[node name="Player" parent="." unique_id=675850903 instance=ExtResource("3_k2fmo")]
+position = Vector2(88, 324)
+
+[node name="Walls" type="Node2D" parent="." unique_id=1810165607]
+
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=1800065143]
+position = Vector2(2, -9)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=979977851]
+position = Vector2(574.5, 0)
+shape = SubResource("RectangleShape2D_k2fmo")
+
+[node name="ButtomWall" type="StaticBody2D" parent="Walls" unique_id=872703537]
+position = Vector2(1, 656)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/ButtomWall" unique_id=169530203]
+position = Vector2(574.5, 0)
+shape = SubResource("RectangleShape2D_k2fmo")
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=1132791819]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=743740372]
+position = Vector2(-9, 327)
+shape = SubResource("RectangleShape2D_l3cfh")
+
+[node name="RightWall2" type="StaticBody2D" parent="Walls" unique_id=1218625621]
+position = Vector2(1169, -1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall2" unique_id=1577636028]
+position = Vector2(-9, 327)
+shape = SubResource("RectangleShape2D_l3cfh")
