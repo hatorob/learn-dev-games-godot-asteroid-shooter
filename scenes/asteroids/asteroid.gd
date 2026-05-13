@@ -9,12 +9,10 @@ var random_degrees: float
 func _ready():
 	random_speed = randf_range(min_speed,max_speed)
 	random_degrees = randf_range(min_degrees,max_degrees)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
-	#print("Posición en x ")
-	#print(position.x)
-	#print("Valor delta ")
-	#print(delta)
-	# el delta es el tiempo en pixeles por segundo (delta time)
 	position.x -= random_speed * delta
 	rotation_degrees += random_degrees * delta
+
+func _on_area_entered(area):
+	queue_free()
