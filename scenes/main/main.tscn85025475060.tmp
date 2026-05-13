@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cymnql4of0twx" path="res://assets/sprites/background.png" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://ber3er2visd3a" path="res://scenes/asteroids/big_asteroid.tscn" id="2_iuonh"]
-[ext_resource type="PackedScene" uid="uid://mlqmrplm7cwf" path="res://scenes/laser/laser.tscn" id="3_6q06x"]
 [ext_resource type="PackedScene" uid="uid://u57j8cw0hyvx" path="res://scenes/player/player.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://ou6r4eam6pyj" path="res://scenes/main/asteroid_spawner.gd" id="3_l3cfh"]
 
@@ -20,7 +19,6 @@ texture = ExtResource("1_hyk8p")
 
 [node name="Player" parent="." unique_id=675850903 instance=ExtResource("3_k2fmo")]
 position = Vector2(88, 324)
-laser_scene = ExtResource("3_6q06x")
 
 [node name="Walls" type="Node2D" parent="." unique_id=1810165607]
 

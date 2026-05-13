@@ -9,6 +9,7 @@ height = 74.0
 
 [node name="Laser" type="Area2D" unique_id=282477043]
 script = ExtResource("1_j8ec3")
+speed_laser = 600.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=457396306]
