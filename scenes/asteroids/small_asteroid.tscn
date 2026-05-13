@@ -8,6 +8,10 @@ radius = 37.0
 
 [node name="SmallAsteroid" type="Area2D" unique_id=382863225]
 script = ExtResource("2_kfbcv")
+min_speed = 350.0
+max_speed = 500.0
+min_degrees = -180.0
+max_degrees = 180.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=545021589]

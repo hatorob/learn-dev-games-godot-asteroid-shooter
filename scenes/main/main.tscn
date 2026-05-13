@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cymnql4of0twx" path="res://assets/sprites/background.png" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://ber3er2visd3a" path="res://scenes/asteroids/big_asteroid.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://u57j8cw0hyvx" path="res://scenes/player/player.tscn" id="3_k2fmo"]
+[ext_resource type="Script" uid="uid://ou6r4eam6pyj" path="res://scenes/main/asteroid_spawner.gd" id="3_l3cfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2fmo"]
 size = Vector2(1169, 20)
@@ -15,10 +16,6 @@ size = Vector2(18, 690)
 [node name="Background" type="Sprite2D" parent="." unique_id=1214120020]
 position = Vector2(612, 343)
 texture = ExtResource("1_hyk8p")
-
-[node name="BigAsteroid" parent="." unique_id=1669415260 instance=ExtResource("2_iuonh")]
-position = Vector2(1268, 338)
-speed = 250.0
 
 [node name="Player" parent="." unique_id=675850903 instance=ExtResource("3_k2fmo")]
 position = Vector2(88, 324)
@@ -55,3 +52,15 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall2" unique_id=1577636028]
 position = Vector2(-9, 327)
 shape = SubResource("RectangleShape2D_l3cfh")
+
+[node name="AsteroidSpawner" type="Marker2D" parent="." unique_id=106173170]
+position = Vector2(1313, 335)
+script = ExtResource("3_l3cfh")
+big_asteroid_scene = ExtResource("2_iuonh")
+min_y = 69.0
+max_y = 576.0
+
+[node name="Timer" type="Timer" parent="AsteroidSpawner" unique_id=835205839]
+autostart = true
+
+[connection signal="timeout" from="AsteroidSpawner/Timer" to="AsteroidSpawner" method="_on_timer_timeout"]
